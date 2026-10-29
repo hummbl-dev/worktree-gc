@@ -41,6 +41,7 @@ class TestGitIntegration(unittest.TestCase):
         run("init", "-b", "main")
         run("config", "user.email", "t@example.com")
         run("config", "user.name", "t")
+        run("config", "commit.gpgsign", "false")
         (self.repo / "f.txt").write_text("x")
         run("add", "f.txt")
         run("commit", "-m", "init")
